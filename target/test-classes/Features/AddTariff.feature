@@ -1,27 +1,34 @@
-Feature: Title of your feature
-  I want to use this template for my feature file
+	@sanity @parveen
+	Feature: Add TariffPlan Functionality
+	  I want to use this template for my feature file
+	  
+	  Background:
+	   Given user should be telecom homepage
+	   And user should navigate to Addtariffplan page
+	  
+	
+	  Scenario: Add TariffPlan details with valid data
+	   When user should enter plan details
+	   And user should submit the plan details
+	   And user should not be displayed with congratulation you add tariffplan
+	 
+	  @smoke @parveen @java 
+	  Scenario: Add TariffPlan details with valid data
+	    When user should enter plan details.
+	      | 100 | 200 | 300 | 400 | 1 | 2 | 3 |
+	      | 200 | 300 | 400 | 500 | 2 | 3 | 4 |
+	      | 300 | 400 | 500 | 600 | 3 | 4 | 5 |
+	      | 400 | 500 | 600 | 700 | 4 | 5 | 6 |
+	    And user should submit the plan details
+	    And user should not be displayed with congratulation you add tariffplan
+	
+	  Scenario: Add TariffPlan details with valid data
+	    When user should enter plan detail
+	      | MR  | LM  | IM  | SMS | LMC | IMC | SMC |
+	      | 100 | 200 | 300 | 400 |   1 |   2 |   3 |
+	      | 200 | 300 | 400 | 500 |   2 |   3 |   4 |
+	      | 300 | 400 | 500 | 600 |   3 |   4 |   5 |
+	      | 400 | 500 | 600 | 700 |   4 |   5 |   6 |
+	    And user should submit the plan details
+	    And user should not be displayed with congratulation you add tariffplan
 
-  Scenario: Title of your scenario
-   # Given User can  Launch the browser.
-   # When User click the Addcustomer Details.
-    #  | fname   | parveen           |
-      #| lname   | rihana            |
-     # | email   | parveen@gmail.com |
-   
-   #   | address | chennai           |
-  
-  #    | phno    |        8667344864 |
-    #And user click the Add tariff Details.
-   # Then I validate  Outcomes.
-
-  Scenario Outline: 
-    Given User can  Launch the browser.
-    When User click the Addcustomer Details"<fname>","<lname>","<email>","<address>","<phno>"
-    And user click the Add tariff Details.
-    Then I validate  Outcomes.
-
-    Examples: 
-      | fname           | lname  | email             | address | phno       |
-      | karthi          | rajan  | kr@gmail.com      | tanjore |  123455666 |
-      | parveen         | rihana | parveen@gmail.com | chennai | 8667344864 |
-      | narayanamoorthy | rajan  | kr@gmail.com      | tanjore |  123455666 |
